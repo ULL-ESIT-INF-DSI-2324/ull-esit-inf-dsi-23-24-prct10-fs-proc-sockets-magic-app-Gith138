@@ -1,0 +1,8 @@
+{
+    "entryPoints": [
+      "./src/cartas.ts",
+      "./src/magic-app.ts",
+      "./src/main.ts"
+    ],
+    "out": "./docs"
+}
