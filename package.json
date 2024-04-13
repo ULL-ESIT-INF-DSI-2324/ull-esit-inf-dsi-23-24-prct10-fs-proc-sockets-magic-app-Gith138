@@ -1,7 +1,7 @@
 {
   "name": "ull-esit-inf-dsi-23-24-prct10-fs-proc-sockets-magic-app-gith138",
   "version": "1.0.0",
-  "description": "[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/7bX30zK4)",
+  "description": "[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/7bX30zK4) [![Coverage Status](https://coveralls.io/repos/github/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct10-fs-proc-sockets-magic-app-Gith138/badge.svg?branch=main)](https://coveralls.io/github/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct10-fs-proc-sockets-magic-app-Gith138?branch=main) [![Build](https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct10-fs-proc-sockets-magic-app-Gith138/actions/workflows/build.yml/badge.svg)](https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct10-fs-proc-sockets-magic-app-Gith138/actions/workflows/build.yml) [![Coveralls](https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct10-fs-proc-sockets-magic-app-Gith138/actions/workflows/coveralls.yml/badge.svg)](https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct10-fs-proc-sockets-magic-app-Gith138/actions/workflows/coveralls.yml) [![Tests](https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct10-fs-proc-sockets-magic-app-Gith138/actions/workflows/node.js.yml/badge.svg)](https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct10-fs-proc-sockets-magic-app-Gith138/actions/workflows/node.js.yml)",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -15,9 +15,11 @@
   "license": "ISC",
   "devDependencies": {
     "@types/chai": "^4.3.12",
+    "@types/express": "^4.17.21",
     "@types/inquirer": "^9.0.7",
     "@types/lowdb": "^1.0.15",
     "@types/mocha": "^10.0.6",
+    "@types/request": "^2.48.12",
     "@types/yargs": "^17.0.32",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
@@ -39,8 +41,10 @@
   "dependencies": {
     "@types/node": "^20.11.30",
     "chalk": "^5.3.0",
+    "express": "^4.19.2",
     "inquirer": "^7.3.3",
     "lowdb": "^1.0.0",
+    "request": "^2.88.2",
     "tsc": "^2.0.4",
     "yargs": "^17.7.2"
   }
