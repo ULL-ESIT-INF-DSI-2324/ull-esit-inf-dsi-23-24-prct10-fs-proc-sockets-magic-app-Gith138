@@ -1,0 +1,10 @@
+{
+  "id": 123,
+  "nombre": "Carta de Ejemplo",
+  "coste_mana": 3,
+  "color": "Azul",
+  "tipo": "Conjuro",
+  "rareza": "Rara",
+  "texto_reglas": "Esta es una carta de ejemplo",
+  "valor_mercado": 10
+}

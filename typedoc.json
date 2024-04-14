@@ -2,7 +2,9 @@
     "entryPoints": [
       "./src/cartas.ts",
       "./src/magic-app.ts",
-      "./src/main.ts"
+      "./src/ejercicio-pe102.ts",
+      "./src/cliente.ts",
+      "./src/servidor.ts"
     ],
     "out": "./docs"
 }
