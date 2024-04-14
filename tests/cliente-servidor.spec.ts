@@ -7,23 +7,23 @@ import { EventEmitterSocket } from '../src/servidor.js';
 
 describe('Carta tests', () => {
     it('crear carta', () => {
-      const carta = new Cartas(666, 'Test', 50, "Blanco" as Color, 'Instantaneo' as Tipo, 'Comun' as Rareza, 'textoooo', 600);
+      const carta = new Cartas(666, 'Test', 50, "verde" as Color, 'Instantaneo' as Tipo, 'Comun' as Rareza, 'pepeee', 600);
       expect(carta.id).to.equal(666);
       expect(carta.nombre).to.equal('Test');
       expect(carta.coste_mana).to.equal(50);
-      expect(carta.color).to.equal('Blanco');
+      expect(carta.color).to.equal('verde');
       expect(carta.tipo).to.equal('Instantaneo');
       expect(carta.rareza).to.equal('Comun');
-      expect(carta.texto_reglas).to.equal('textoooo');
+      expect(carta.texto_reglas).to.equal('pepeee');
       expect(carta.valor_mercado).to.equal(600);
     });
     
     it('crear carta con valores válidos', () => {
-      const carta = new Cartas(123, 'Carta de ejemplo', 4, "Azul" as Color, 'Criatura' as Tipo, 'Rara' as Rareza, 'Texto de reglas', 10);
+      const carta = new Cartas(123, 'NOVIOSS', 56, "Incoloro" as Color, 'Criatura' as Tipo, 'Rara' as Rareza, 'Texto de reglas', 10);
       expect(carta.id).to.equal(123);
-      expect(carta.nombre).to.equal('Carta de ejemplo');
-      expect(carta.coste_mana).to.equal(4);
-      expect(carta.color).to.equal('Azul');
+      expect(carta.nombre).to.equal('NOVIOSS');
+      expect(carta.coste_mana).to.equal(56);
+      expect(carta.color).to.equal('Incoloro');
       expect(carta.tipo).to.equal('Criatura');
       expect(carta.rareza).to.equal('Rara');
       expect(carta.texto_reglas).to.equal('Texto de reglas');
@@ -94,11 +94,11 @@ describe('Carta tests', () => {
     });
   
     it('crear carta de criatura con marcas de lealtad', () => {
-      const carta = new Cartas(303, 'Planewalker Aliado', 5, "Blanco" as Color, 'Planeswalker' as Tipo, 'Mítica' as Rareza, 'Texto de reglas para el planeswalker aliado', 50, undefined, 5);
+      const carta = new Cartas(303, 'Planewalker Aliado', 5, "verde" as Color, 'Planeswalker' as Tipo, 'Mítica' as Rareza, 'Texto de reglas para el planeswalker aliado', 50, undefined, 5);
       expect(carta.id).to.equal(303);
       expect(carta.nombre).to.equal('Planewalker Aliado');
       expect(carta.coste_mana).to.equal(5);
-      expect(carta.color).to.equal('Blanco');
+      expect(carta.color).to.equal('verde');
       expect(carta.tipo).to.equal('Planeswalker');
       expect(carta.rareza).to.equal('Mítica');
       expect(carta.texto_reglas).to.equal('Texto de reglas para el planeswalker aliado');
@@ -125,7 +125,7 @@ describe('Carta tests', () => {
     const coleccion = new ColeccionCartas();
     const usuario = `usuarioEjemplo`
     it('agregar carta a colección', (done) => {
-      const carta = new Cartas(303, 'Planewalker Aliado', 5, "Blanco" as Color, 'Planeswalker' as Tipo, 'Mítica' as Rareza, 'Texto de reglas para el planeswalker aliado', 50, undefined, 5);
+      const carta = new Cartas(303, 'Planewalker Aliado', 5, "verde" as Color, 'Planeswalker' as Tipo, 'Mítica' as Rareza, 'Texto de reglas para el planeswalker aliado', 50, undefined, 5);
       coleccion.AyadirCarta(carta, usuario, (error, mensaje) => {
         expect(error).to.be.undefined;
         expect(mensaje).to.equal(`Nueva carta añadida a la colección de ${usuario}!`);
@@ -133,14 +133,14 @@ describe('Carta tests', () => {
       });
     });
     it('agregar carta existente a colección', (done) => {
-      const carta = new Cartas(303, 'Planewalker Aliado', 5, "Blanco" as Color, 'Planeswalker' as Tipo, 'Mítica' as Rareza, 'Texto de reglas para el planeswalker aliado', 50, undefined, 5);
+      const carta = new Cartas(303, 'Planewalker Aliado', 5, "verde" as Color, 'Planeswalker' as Tipo, 'Mítica' as Rareza, 'Texto de reglas para el planeswalker aliado', 50, undefined, 5);
       coleccion.AyadirCarta(carta, usuario, (error, mensaje) => {
         expect(error).to.not.be.undefined;
         done();
       });
     });
     it('actualizar carta de una colección', (done) => {
-      const carta = new Cartas(303, 'Planewalker Aliado', 5, "Blanco" as Color, 'Planeswalker' as Tipo, 'Mítica' as Rareza, 'Texto de reglas para el planeswalker aliado', 50, undefined, 5);
+      const carta = new Cartas(303, 'Planewalker Aliado', 5, "verde" as Color, 'Planeswalker' as Tipo, 'Mítica' as Rareza, 'Texto de reglas para el planeswalker aliado', 50, undefined, 5);
       coleccion.ActualizarCarta(carta, usuario, (error, mensaje) => {
         expect(error).to.be.undefined;
         expect(mensaje).to.equal(`Carta actualizada en la colección de ${usuario}!`);
@@ -148,7 +148,7 @@ describe('Carta tests', () => {
       });
     });
     it('actualizar carta no existente de una colección', (done) => {
-      const carta = new Cartas(304, 'Planewalker Aliado', 5, "Blanco" as Color, 'Planeswalker' as Tipo, 'Mítica' as Rareza, 'Texto de reglas para el planeswalker aliado', 50, undefined, 5);
+      const carta = new Cartas(304, 'Planewalker Aliado', 5, "verde" as Color, 'Planeswalker' as Tipo, 'Mítica' as Rareza, 'Texto de reglas para el planeswalker aliado', 50, undefined, 5);
       coleccion.ActualizarCarta(carta, usuario, (error, mensaje) => {
         expect(error).to.not.be.undefined;
         done();
