@@ -435,7 +435,29 @@ cliente.on('close', () => {
   console.log('Conexion cerrada');
 });
 ```
-
+### Modificación
+Como modificación se pidió realizar una de las operaciones de las cartas mágicas, usando el patrón `Callback`, para así controlar mejor los errores.
+En mi caso lo hice de la operación de eliminar cartas:
+```ts
+    function EliminarCarta(id: number, usuario: string, callback: (err: string | undefined, mensaje: string | undefined) => void) {
+        const directorio_cartas = `./cartas/${usuario}`;
+        const RutaCarta = `${directorio_cartas}/${id}.json`;
+        fs.access(RutaCarta, fs.constants.F_OK, (err) => { // Verificar si la carta existe, usando fs.access con fs.constants.F_OK que es para verificar si el archivo existe.
+            if (err) { // Si hay un error, significa que la carta no existe
+                callback(`La carta no existe en la colección de ${usuario}!`, undefined);
+            } else {
+                fs.unlink(RutaCarta, (err) => { // borra la carta existente, sino muestra un error
+                    if (err) {
+                        callback(`Error al eliminar la carta: ${err}`, undefined);
+                    } else {
+                        callback(undefined, `Carta eliminada de la colección de ${usuario}!`);
+                    }
+                });
+            }
+        });
+      }
+```
+Esta función elimina un archivo de una carta específica del sistema de archivos(json) y notifica al usuario sobre el resultado de la operación a través de una función de devolución de llamada, es decir, usando `Callback`.
 ### Dificultades      
 Esta práctica ha sido complicada, porque me ha resultado difícil entender bien el funcionamiento de los distintos paquetes y como usar el `Módulo Net`
 
